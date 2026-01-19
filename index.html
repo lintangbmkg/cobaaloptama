@@ -235,10 +235,10 @@
         .layer-item {
             display: flex;
             align-items: center;
-            margin-bottom: 7px;
+            margin-bottom: 2px;
             cursor: pointer;
             transition: all 0.2s ease;
-            padding: 6px;
+            padding: 3px;
             border-radius: 3px;
         }
 
@@ -1372,13 +1372,13 @@
             } else if (equipmentType === 'tabung-gas') {
                 const condition = row['KTG'] ? row['KTG'].trim() : '';
                 if (condition === 'Baik') return '#2ecc71'; // Hijau
-                if (condition === 'Rusak' || condition === 'Isi ulang') return '#f39c12'; // Kuning
+                if (condition === 'Rusak') return '#f39c12'; // Kuning
                 if (condition === 'Rusak Berat') return '#e74c3c'; // Merah
                 return '#2c3e50'; // Hitam - kosong
             } else if (equipmentType === 'kop-gas') {
                 const condition = row['KKG'] ? row['KKG'].trim() : '';
                 if (condition === 'Baik') return '#2ecc71'; // Hijau
-                if (condition === 'Rusak ringan' || condition === 'Isi ulang') return '#f39c12'; // Kuning
+                if (condition === 'Rusak ringan') return '#f39c12'; // Kuning
                 if (condition === 'Rusak Berat') return '#e74c3c'; // Merah
                 return '#2c3e50'; // Hitam - kosong
             } else if (equipmentType === 'ground-equipment') {
@@ -1398,14 +1398,14 @@
             const awos2Active = activeAwosLayers.has('awos-kategori-2') && row['AWOS2'] && row['AWOS2'].trim() !== '';
             const awos1Active = activeAwosLayers.has('awos-kategori-1') && row['AWOS1'] && row['AWOS1'].trim() !== '';
 
-            if (awos3Active) return '#9b59b6'; // Ungu - kategori 3
-            if (awos2Active) return '#e8b4d4'; // Pink-biru gradasi - kategori 2
-            if (awos1Active) return '#ff00ff'; // Magenta (merah tua) - kategori 1
+            if (awos3Active) return '#5027F5';
+            if (awos2Active) return '#9613E8';
+            if (awos1Active) return '#DE09D7';
             return '#2c3e50'; // Hitam - kosong
         }
 
         function getWindProfilerColor() {
-            return '#00bcd4'; // Cyan/Turquoise - untuk Wind Profiler
+            return '#04C4BD'; // Cyan/Turquoise - untuk Wind Profiler
         }
 
         function getLLWASColor() {
@@ -1413,11 +1413,11 @@
         }
 
         function getWindshearColor() {
-            return '#c0392b'; // Deep Red - untuk Windshear Detection
+            return '#7D2419'; // Deep Red - untuk Windshear Detection
         }
 
         function getAwsDigitalColor() {
-            return '#16a085'; // Teal - untuk AWS Digital
+            return '#8DC431'; // Teal - untuk AWS Digital
         }
 
         function addMarkersToMap() {
@@ -2507,4 +2507,5 @@
 </body>
 
 </html>
+
 
