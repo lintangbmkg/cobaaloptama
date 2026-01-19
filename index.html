@@ -412,24 +412,90 @@
         }
 
         .map-popup {
-    position: absolute;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    padding: 12px;
-    font-size: 13px;
-    width: 260px;
-    max-height: 90vh;
-    overflow-y: auto;
-    z-index: 10000;
-    display: none;
-    animation: slideIn 0.2s ease-out;
-  }
+            background: white;
+            border-radius: 4px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: fixed;
+            max-width: 280px;
+            z-index: 2000;
+            display: none;
+            border-left: 4px solid #1e8449;
+        }
 
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateX(10px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
+        .map-popup.show {
+            display: block;
+            animation: popupSlide 0.3s ease;
+        }
+
+        @keyframes popupSlide {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .map-popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #f0f7f5;
+            padding-bottom: 8px;
+        }
+
+        .map-popup-title {
+            font-weight: 700;
+            color: #0b5394;
+            font-size: 0.95em;
+            flex: 1;
+        }
+
+        .map-popup-close {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #999;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease;
+        }
+
+        .map-popup-close:hover {
+            color: #0b5394;
+        }
+
+        .map-popup-content {
+            font-size: 0.9em;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .map-popup-item {
+            margin-bottom: 8px;
+            display: flex;
+        }
+
+        .map-popup-label {
+            font-weight: 600;
+            color: #0b5394;
+            min-width: 80px;
+            margin-right: 5px;
+        }
+
+        .map-popup-value {
+            color: #555;
+        }
+        
         /* Detail Popup (Kendala Operasional) */
         .detail-popup {
             background: white;
@@ -2441,6 +2507,7 @@
 </body>
 
 </html>
+
 
 
 
